@@ -1,0 +1,6 @@
+[
+  {"effort":"default","expected":"supported","seconds":23.96,"status":200,"grounding":"supported","scene_number":1},
+  {"effort":"default","expected":"contradiction","seconds":29.58,"status":200,"grounding":"contradiction","scene_number":1},
+  {"effort":"low","expected":"supported","seconds":6.30,"status":200,"grounding":"supported","scene_number":1},
+  {"effort":"low","expected":"contradiction","seconds":16.87,"status":200,"grounding":"supported","scene_number":1}
+]

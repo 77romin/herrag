@@ -1,0 +1,179 @@
+[
+  {
+    "pack": "교토에서 바뀐 필름 카메라.md",
+    "rows": [
+      {
+        "input": "맞아요. 어떻게 아셨죠?",
+        "answer": "이나경이 카메라 스트랩을 가리키며 눈을 반짝인다.\n이나경이 말한다.\n스트랩 색 보고 바로 알아챘어요. 저도 같은 기종에 남색 스트랩을 매고 있어서 눈에 띄었거든요. 아마 카메라가 뒤바뀐 것 같네요, 돌려주실래요?",
+        "scene": 1,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 20.16
+      },
+      {
+        "input": "앗 죄송해요. 제 것이 아니군요",
+        "answer": "사용자가 당황한 듯 사과하며 자신의 것이 아님을 인정한다.\n이나경이 말한다.\n아, 괜찮아요, 놀라셨겠네요. 스트랩 색 보고 바로 알아챘어요, 카메라가 뒤바뀐 것 같아요, 돌려주실래요?",
+        "scene": 1,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 31.39
+      },
+      {
+        "input": "카메라를 확인했어요. 여기 돌려드릴게요.",
+        "answer": "이나경이 말한다.\n아, 정말요? 돌려주셔서 감사합니다. 놀라셨죠, 괜찮아요—정말 다행이에요.\n나경이 카메라를 받아들며 스트랩을 한 번 정리한 뒤 옆으로 눈을 돌려 강변 쪽을 가리킨다. 오후 햇살이 천천히 강을 비추고 있어 산책하기 좋은 분위기다.\n이나경이 말한다.\n강변에서 한 장씩 찍으실래요?",
+        "scene": 2,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 30.85
+      },
+      {
+        "input": "좋아요",
+        "answer": "나경이 환하게 웃으며 고개를 끄덕인다. 오후 햇살이 강변을 부드럽게 비추고 있어 걷기 좋은 기운이 흐른다.\n같이 강변으로 걸으실래요?",
+        "scene": 2,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 8.36
+      },
+      {
+        "isolated_final": true,
+        "input": "사진 친구로 연락하고 싶어요.",
+        "answer": "강변의 잔잔한 바람 아래, 나경이 미소를 지으며 고개를 끄덕인다.\n좋아요. 그럼 현상되면 풍경 사진 한 장씩 교환해요. 기다려주셔서 고마워요.",
+        "ended": true,
+        "ending_title": "서로의 여행 한 장",
+        "session_deleted": true
+      }
+    ]
+  },
+  {
+    "pack": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md",
+    "rows": [
+      {
+        "input": "ㅇㅇ",
+        "answer": "리알토 다리 근처 선착장, 서윤이 놀란 듯 미소를 띠며 고개를 갸웃거린다.\n서윤 말한다.\n어머, 진짜? 기억해 줘서 기분이 묘하네. 같이 이야기하거나 걸을래?",
+        "scene": 1,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 18.8
+      },
+      {
+        "input": "여기 근처 한강대교로 걸어갈까?",
+        "error": "Contradiction must cite an actual scenario passage"
+      },
+      {
+        "input": "그러자",
+        "answer": "두 사람은 수상버스 선착장에서 함께 운하 쪽 골목을 따라 천천히 걷기 시작한다. 9월의 저녁 햇살이 물결에 반짝이고, 주변엔 작은 젤라토 가게와 가로등 불빛이 어슴푸레하다.\n서윤 말한다.\n그러자 해줘서 고마워. 운하 따라 걷는 동안 얘기하자. 사실 이번에 일러스트 전시 때문에 이탈리아에 왔어. 요즘은 어떻게 지내?",
+        "scene": 2,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 11.36
+      },
+      {
+        "isolated_final": true,
+        "input": "친구로 연락하며 지내고 싶어.",
+        "answer": "노을빛이 물든 리알토 다리 위, 잔잔한 운하가 반짝인다. 서윤이 잠깐 머뭇거리다 이내 환하게 웃는다.\n서윤이 말한다.\n응… 서운하기도 했지만, 그래, 친구로 연락하며 지내자. 나도 네 여행 잘 되길 바랄게. 내가 먼저 메시지 보낼게, 편하게 지내자.",
+        "ended": true,
+        "ending_title": "오래된 친구의 새 연락처",
+        "session_deleted": true
+      }
+    ]
+  },
+  {
+    "pack": "제주 게스트하우스의 마지막 저녁.md",
+    "rows": [
+      {
+        "input": "왜 저한테 말을 거셨어요?",
+        "error": "Story response still inconsistent after one repair"
+      },
+      {
+        "input": "좋아요. 같이 정리할게요.",
+        "answer": "윤해린 말한다.\n좋아요, 같이 정리해 주셔서 고마워요.\n귤을 함께 치운 뒤 해린이 남은 재료들을 살펴본다. 공용 부엌에 있는 재료로 간단히 저녁을 만들 생각이라고 말한다.\n윤해린 말한다.\n저녁을 어떻게 나눌까요?",
+        "scene": 2,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 24.49
+      },
+      {
+        "input": "요즘 공부가 힘들어서 쉬러 왔어요. 해린 씨는요?",
+        "error": "Story response still inconsistent after one repair"
+      },
+      {
+        "isolated_final": true,
+        "input": "친구로 연락하며 지내고 싶어요.",
+        "answer": "해린이 잠깐 안도의 숨을 내쉰다.\n고마워요. 친구로 응원해주신다니 정말 힘이 돼요. 개업하면 바로 소식 전할게요.",
+        "ended": true,
+        "ending_title": "바람이 전하는 안부",
+        "session_deleted": true
+      }
+    ]
+  },
+  {
+    "pack": "심야 라디오의 마지막 게스트.md",
+    "rows": [
+      {
+        "input": "왜 마지막 방송인가요?",
+        "error": "Story response still inconsistent after one repair"
+      },
+      {
+        "input": "별명은 가을이라고 불러주세요.",
+        "answer": "가을이라고 불러달라니, 알겠어요. 가을님으로 부를게요.\n온에어 표시가 켜지고 조명이 조금 더 집중되며 방송이 시작될 준비가 된다.\n오늘 전하고 싶은 한마디 있으신가요?",
+        "scene": 2,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 25.92
+      },
+      {
+        "input": "아직 생각이 정리되지 않아서 잠깐 조용히 있고 싶어요.",
+        "answer": "온에어 표시가 은은히 깜빡이고 스튜디오는 잠시 고요해진다.\n알겠습니다, 가을님. 편히 계세요.\n정다은이 송출을 차분히 정리하고 마이크에서 손을 뗀다.\n방송 끝난 뒤 대기실에서 잠깐 이야기 나눌래요?",
+        "scene": 3,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 71.1
+      },
+      {
+        "isolated_final": true,
+        "input": "방송 밖에서 데이트로 만나고 싶어요.",
+        "answer": "건물 현관 앞 밤공기 속에서 다은이 살짝 웃으며 고개를 숙인다.\n정다은 말한다.\n만나자고 해주셔서 정말 기뻐요, 방송이 아닌 자리에서 천천히 이야기를 나눠봐요.",
+        "ended": true,
+        "ending_title": "주파수 밖의 만남",
+        "session_deleted": true
+      }
+    ]
+  },
+  {
+    "pack": "비 오는 북카페의 마지막 페이지.md",
+    "rows": [
+      {
+        "input": "다른 분들은 왜 안 오셨어요?",
+        "answer": "창가에 떨어지는 빗소리가 조용히 흐르는 가운데, 소은이 서랍에서 노트와 책을 정리한다.\n박소은 말한다.\n비 때문에 대부분 취소하셨고, 몇 분은 갑작스러운 일이 생기셨대요. 죄송해요, 그래도 시작해 볼까요?",
+        "scene": 1,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 45.07
+      },
+      {
+        "input": "책을 많이 안 읽었는데 괜찮을까요?",
+        "answer": "소은이 다정한 미소를 지으며 노트 위의 펜을 손끝으로 굴린다.\n박소은 말한다.\n책을 많이 안 읽으셔도 괜찮아요, 이 모임은 부담 없이 각자 편한 대로 즐기시면 되는 자리거든요. 모임에 참여해 주시겠어요, 아니면 가벼운 대화를 할까요?",
+        "scene": 1,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 22.59
+      },
+      {
+        "input": "오늘은 모임 대신 가볍게 대화하고 싶어요.",
+        "answer": "소은이 천천히 고개를 끄덕이며 의자에 편하게 기대고 창밖 빗소리를 잠깐 듣는다.\n박소은 말한다.\n알겠어요, 오늘은 모임 대신 가볍게 대화해요. 편하게 계세요. 한 가지 궁금한 게 있는데요, 열린 결말과 닫힌 결말 중 어느 쪽을 더 좋아하세요?",
+        "scene": 2,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 20.57
+      },
+      {
+        "isolated_final": true,
+        "input": "다음에는 데이트로 만나고 싶어요.",
+        "answer": "입구 처마 아래, 비 소리가 잔잔해진 사이 소은이 우산을 접으며 사용자의 말에 눈을 반짝인다.\n박소은 말한다.\n정말요? 기뻐요. 다음엔 비가 안 오는 날에 데이트로 더 오래 이야기해요.\n두 사람은 다음 만남을 데이트로 약속하고, 서로 웃으며 카페 문을 나선다.",
+        "ended": true,
+        "ending_title": "함께 쓰는 다음 페이지",
+        "session_deleted": true
+      }
+    ]
+  }
+]

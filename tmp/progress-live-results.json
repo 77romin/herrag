@@ -1,0 +1,47 @@
+[
+  {
+    "message": "ㅇㅇ",
+    "answer": "서윤이 눈을 깜빡이고는 금세 웃음을 띠며 다가온다. 리알토 선착장에 저녁 빛이 깔리고 그녀는 반가움에 살짝 머뭇거린다.\n서윤이 말한다.\n같이 이야기하거나 걸을래?",
+    "scene": 1,
+    "completed": {
+      "0:s1_r1": {
+        "requirement_id": "s1_r1",
+        "evidence": "ㅇㅇ",
+        "value": "사용자가 같은 반이었음을 인정함",
+        "scene": 0,
+        "user_message": "ㅇㅇ"
+      }
+    },
+    "pending": {
+      "scene": 0,
+      "requirement_id": "s1_r2",
+      "text": "같이 이야기하거나 걸을래?"
+    }
+  },
+  {
+    "message": "그러자",
+    "answer": "서윤이 환한 미소로 고개를 끄덕이며 옆으로 걸음을 맞춘다. 리알토의 저녁 빛이 두 사람의 그림자를 길게 늘인다.\n서윤이 말한다.\n요즘은 어떻게 지내?",
+    "scene": 2,
+    "completed": {
+      "0:s1_r1": {
+        "requirement_id": "s1_r1",
+        "evidence": "ㅇㅇ",
+        "value": "사용자가 같은 반이었음을 인정함",
+        "scene": 0,
+        "user_message": "ㅇㅇ"
+      },
+      "0:s1_r2": {
+        "requirement_id": "s1_r2",
+        "evidence": "그러자",
+        "value": "동행에 동의함",
+        "scene": 0,
+        "user_message": "그러자"
+      }
+    },
+    "pending": {
+      "scene": 1,
+      "requirement_id": "s2_r1",
+      "text": "요즘은 어떻게 지내?"
+    }
+  }
+]

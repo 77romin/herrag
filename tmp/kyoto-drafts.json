@@ -1,0 +1,45 @@
+[
+  {
+    "turn": {
+      "answer": "사용자가 '좋아요'라고 하자 그녀가 환하게 웃으며 고개를 끄덕인다. 카메라 스트랩을 손에 쥐고 고맙다고 말할 준비를 한다.\n고마워요. 그럼 같이 강변으로 걸으면서 각자 한 장씩 찍어요.\n강변을 걸으며 나경은 잘 찍어야 한다는 부담 때문에 사진 찍는 즐거움을 잃었다고 조심스럽게 털어놓으려 한다.\n어떤 생각이신가요?",
+      "grounding": "supported",
+      "evidence": "",
+      "scene_complete": true,
+      "ending": null,
+      "memory": "사용자가 바뀐 카메라를 확인하고 돌려주었다. 나경이 강변에서 사진을 찍자고 제안했고, 사용자가 강변을 따라 동행하기로 했다.",
+      "segments": [
+        {
+          "kind": "narration",
+          "text": "사용자가 '좋아요'라고 하자 그녀가 환하게 웃으며 고개를 끄덕인다. 카메라 스트랩을 손에 쥐고 고맙다고 말할 준비를 한다."
+        },
+        {
+          "kind": "dialogue",
+          "text": "고마워요. 그럼 같이 강변으로 걸으면서 각자 한 장씩 찍어요."
+        },
+        {
+          "kind": "narration",
+          "text": "강변을 걸으며 나경은 잘 찍어야 한다는 부담 때문에 사진 찍는 즐거움을 잃었다고 조심스럽게 털어놓으려 한다."
+        },
+        {
+          "kind": "dialogue",
+          "text": "어떤 생각이신가요?"
+        }
+      ],
+      "satisfied_requirements": [
+        {
+          "requirement_id": "r3",
+          "evidence": "좋아요",
+          "value": "사용자가 강변을 따라 동행하겠다고 선택한다."
+        }
+      ],
+      "next_question": {
+        "scene": 2,
+        "requirement_id": "r5",
+        "text": "어떤 생각이신가요?"
+      },
+      "introduced_scene": 2,
+      "scene_introduction": "강변을 걸으며 나경은 잘 찍어야 한다는 부담 때문에 사진 찍는 즐거움을 잃었다고 조심스럽게 털어놓으려 한다."
+    },
+    "feedback": null
+  }
+]

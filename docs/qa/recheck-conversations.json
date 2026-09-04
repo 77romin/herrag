@@ -1,0 +1,118 @@
+[
+  {
+    "pack": "교토에서 바뀐 필름 카메라.md",
+    "rows": [
+      {
+        "input": "맞아요. 어떻게 아셨죠?",
+        "answer": "그녀가 카메라 스트랩을 가리키며 살짝 웃는다.\n이나경 말한다.\n약간 장난스럽게, 스트랩 색이 달라서 바로 알아봤어요. 혹시 불편하셨다면 죄송해요. 돌려주실래요?",
+        "scene": 1,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 16.73
+      },
+      {
+        "input": "앗 죄송해요. 제 것이 아니군요",
+        "answer": "나경이 어깨를 으쓱하며 괜찮다고 말하고 손을 내민다.\n이나경 말한다.\n괜찮아요, 신경 쓰지 마세요. 돌려주실래요?",
+        "scene": 1,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 20.64
+      },
+      {
+        "input": "카메라를 확인했어요. 여기 돌려드릴게요.",
+        "answer": "나경이 카메라를 받아 살짝 웃으며 고개를 끄덕인다.\n이나경 말한다.\n고맙습니다, 괜찮아요. 강변에서 한 장씩 찍으실래요?",
+        "scene": 2,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 22.19
+      },
+      {
+        "input": "좋아요",
+        "error": "Story response still inconsistent after one repair"
+      },
+      {
+        "isolated_final": true,
+        "input": "사진 친구로 연락하고 싶어요.",
+        "answer": "정말요? 그럼 좋네요, 현상되면 풍경 사진 서로 교환해요.\n나는 미소를 지으며 약속을 확인했다. 필름은 아직 미현상 상태라 결과는 며칠 뒤에야 알게 될 것이다.",
+        "ended": true,
+        "ending_title": "서로의 여행 한 장",
+        "session_deleted": true
+      }
+    ]
+  },
+  {
+    "pack": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md",
+    "rows": [
+      {
+        "input": "여기 근처 한강대교로 걸어갈까?",
+        "answer": "그녀가 웃음을 애써 눌러 담으며 고개를 갸웃한다.\n무슨 소리야? 우리 지금 베네치아잖아. 다시 말해 줄래? 잠깐… 혹시 우리 6학년 때 같은 반 아니었어?",
+        "scene": 1,
+        "grounding": "contradiction",
+        "ended": false,
+        "seconds": 24.78
+      },
+      {
+        "isolated_final": true,
+        "input": "친구로 연락하며 지내고 싶어.",
+        "answer": "서윤이 웃으며 말한다.\n친구로 연락하며 지내자니 정말 다행이야. 서로 여행 응원해주자, 나도 끝나고 연락할게.\n그녀가 휴대전화를 꺼내 연락처를 교환하고, 리알토 다리 위에서 가볍게 손을 흔들어 작별 인사를 나눈다.",
+        "ended": true,
+        "ending_title": "오래된 친구의 새 연락처",
+        "session_deleted": true
+      }
+    ]
+  },
+  {
+    "pack": "심야 라디오의 마지막 게스트.md",
+    "rows": [
+      {
+        "input": "왜 마지막 방송인가요?",
+        "answer": "정다은 말한다.\n왜 마지막 방송인지 궁금하실 것 같아요. 죄송하지만 그 얘기는 방송 중엔 말씀드릴 수 없어요. 방송이 끝난 뒤 대기실에서 솔직히 말씀드릴게요. 오늘 어떤 이름으로 불러드릴까요?\n그녀가 살짝 미소를 지으며 마이크 위치를 손보았다.",
+        "scene": 1,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 31.45
+      },
+      {
+        "isolated_final": true,
+        "input": "방송 밖에서 데이트로 만나고 싶어요.",
+        "answer": "건물 현관에 서 있던 다은이 놀란 듯이, 이내 부드럽게 웃음을 띠며 당신을 본다.\n정다은이 말한다.\n정말요? 그럼 방송이 아닌 자리에서 천천히 알아가요.\n두 사람은 다음 만남을 약속하고 각각의 길로 조용히 헤어진다.",
+        "ended": true,
+        "ending_title": "주파수 밖의 만남",
+        "session_deleted": true
+      }
+    ]
+  },
+  {
+    "pack": "제주 게스트하우스의 마지막 저녁.md",
+    "rows": [
+      {
+        "input": "왜 저한테 말을 거셨어요?",
+        "answer": "해린이 공용 부엌에서 남은 귤을 가리키며 고개를 약간 숙인다.\n아, 죄송해요. 혼자 계신 것 같아서 괜찮으실까 해서요. 혼자 드실 거면, 여기 앉으셔도 돼요",
+        "scene": 1,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 24.44
+      },
+      {
+        "input": "좋아요. 같이 정리할게요.",
+        "error": "Story response still inconsistent after one repair"
+      },
+      {
+        "input": "요즘 공부가 힘들어서 쉬러 왔어요. 해린 씨는요?",
+        "answer": "해린이 사용자의 말을 듣고 살짝 고개를 끄덕인 뒤 부엌 의자 손잡이에 손을 올린다.\n공부하시느라 많이 지치셨겠네요, 쉬러 오신 건 잘하셨어요. 저는 서점 준비로 한 달 살기 중이에요, 주로 조용히 지내려고 왔습니다. 혼자 드실 거면, 여기 앉으셔도 돼요",
+        "scene": 1,
+        "grounding": "supported",
+        "ended": false,
+        "seconds": 23.91
+      },
+      {
+        "isolated_final": true,
+        "input": "친구로 연락하며 지내고 싶어요.",
+        "answer": "해린이 조용히 미소 지으며 고개를 끄덕인다.\n윤해린 말한다.\n친구로 응원해주신다니 정말 고맙습니다. 개업 소식은 꼭 보내드릴게요, 가끔 안부도 물어봐 주세요.",
+        "ended": true,
+        "ending_title": "바람이 전하는 안부",
+        "session_deleted": true
+      }
+    ]
+  }
+]

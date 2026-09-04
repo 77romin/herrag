@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#783e38">
+  <title>연애 시뮬레이션 챗봇 · 가을의 세이브 포인트</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-wrap">
+    <header class="brand-bar">
+      <a class="brand" href="index.html" aria-label="연애 시뮬레이션 챗봇 홈"><span class="brand-icon" aria-hidden="true">♥</span><span>AUTUMN STORY CLUB<small>가을의 세이브 포인트</small></span></a>
+      <span class="edition">STORY CONSOLE <b>VOL. 01</b></span>
+    </header>
+    <div class="intro"><div><p class="eyebrow">A LITTLE NOSTALGIA, A NEW ROMANCE</p><h1>연애 시뮬레이션 챗봇<span class="title-leaf" aria-hidden="true">❧</span></h1><p>좋아하는 이야기를 꽂고, 우리만의 다음 장면을 시작해요.</p></div><span class="season-tag">가을 한정의 설렘<br><b>PRESS START TO FALL IN LOVE</b></span></div>
+    <main class="console">
+      <aside class="sidebar" aria-label="스토리팩 관리">
+        <div class="section-label"><span>01 / STORY SLOT</span><span class="power"><i id="power-led"></i><span id="power-label">대기 중</span></span></div>
+        <form id="upload-form">
+          <div id="pack-slot" class="pack-slot">
+            <div class="cartridge" id="cartridge"><div class="cart-ridges" aria-hidden="true"></div><div class="cart-label"><span class="cart-series">AUTUMN STORY PACK</span><span id="pack-symbol" class="pack-symbol" aria-hidden="true">♡</span><strong id="pack-title">아직 만나지 않은 이야기</strong><span id="pack-subtitle">당신의 스토리팩을 기다려요</span></div><div class="cart-contacts" aria-hidden="true"></div></div>
+            <div class="slot-mouth" aria-hidden="true"></div><span class="slot-caption">INSERT YOUR STORY HERE</span>
+          </div>
+          <input id="file" class="sr-only" type="file" accept=".md,.txt,.pdf" tabindex="-1" aria-label="스토리팩 파일 선택">
+          <button id="choose-file" class="button outline" type="button"><span aria-hidden="true">＋</span> 스토리팩 삽입</button>
+          <button id="start" class="button primary" type="submit" disabled><span aria-hidden="true">▶</span> 이 팩으로 시작</button>
+          <p id="pack-hint" class="pack-hint">MD · TXT · PDF / 최대 2MB<br>새 팩을 시작하면 이전 이야기가 초기화돼요.</p>
+        </form>
+        <div class="library-heading"><div><span class="section-label">02 / COLLECTION</span><h2>스토리팩 보관함</h2></div><span class="count">05</span></div>
+        <p class="library-note">마음에 드는 팩을 골라 슬롯에 넣어보세요.</p>
+        <div id="samples" class="pack-library"></div>
+        <div class="player-note"><span aria-hidden="true">✳</span><p>당신은 남자 주인공,<br>AI는 이야기 속 여자 주인공.<br><b>다음 대사는 당신의 선택이에요.</b></p></div>
+      </aside>
+      <section class="screen-panel" aria-label="게임 채팅">
+        <div class="screen-top"><div class="playing-label"><span class="screen-dot" aria-hidden="true"></span><span id="playing-label">READY TO PLAY</span></div><span class="sound-label">TEXT-ONLY ROMANCE <span aria-hidden="true">✦</span></span></div>
+        <div class="game-content"><div class="conversation"><header class="story-header"><div><h2 id="title">어떤 이야기를 시작할까요?</h2><p id="scene">스토리팩을 넣으면 첫 장면이 펼쳐집니다.</p></div><button id="reset" class="eject-button" disabled><span aria-hidden="true">⏏</span> 팩 꺼내기</button></header>
+        <div id="progress" class="scene-progress" role="progressbar" aria-label="이야기 진행" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+        <div id="chat" role="log" aria-live="polite" aria-relevant="additions">
+          <div class="welcome" id="welcome"><div class="welcome-art" aria-hidden="true"><span class="spark spark-one">✦</span><div class="envelope"><div class="letter">TO. YOU<span>♥</span></div></div><span class="spark spark-two">✧</span><span class="fall-leaf">❧</span></div><span class="eyebrow">YOUR NEXT CHAPTER AWAITS</span><h3>이 가을, 어떤 우연을<br>만나고 싶나요?</h3><p>낯선 도시의 재회부터 비 오는 날의 북카페까지.<br>팩 하나에 담긴 세상에서, 당신의 이야기가 시작됩니다.</p><button class="welcome-start" id="welcome-start" type="button" disabled>스토리 시작하기 <span aria-hidden="true">↗</span></button><div class="welcome-tags"><span>문서로 여는 세계</span><i>·</i><span>선택으로 만드는 결말</span></div></div>
+        </div>
+        <div id="status" role="status" aria-live="polite"></div>
+        <div class="composer"><form id="chat-form"><label class="sr-only" for="input">대사 또는 행동</label><textarea id="input" rows="2" maxlength="2000" placeholder="스토리팩을 넣고 이야기를 시작해 주세요." disabled></textarea><button id="send" class="send-button" disabled aria-label="대사 보내기">보내기 <span aria-hidden="true">↗</span></button></form><div class="composer-meta"><span><kbd>Enter</kbd> 보내기 <span class="meta-divider">/</span> <kbd>Shift + Enter</kbd> 줄바꿈</span><span id="char-count">0 / 2,000</span></div></div>
+        </div>
+        <aside id="story-brief" class="story-brief" aria-label="스토리 시작 안내" hidden>
+          <details open>
+            <summary><span class="eyebrow">BEFORE WE BEGIN</span><strong>이야기 속으로</strong><span class="brief-toggle" aria-hidden="true">⌄</span></summary>
+            <p class="brief-intro">시작 전에 알아두면 좋은 이야기의 배경이에요.</p>
+            <dl id="brief-facts"></dl>
+            <p id="brief-empty" class="brief-empty" hidden>공개할 수 있는 시작 정보를 확인하지 못했어요. 첫 대화를 통해 상황을 알아가 주세요.</p>
+            <p class="brief-footer">앞으로의 이야기는 대화 속에서 만나보세요.</p>
+          </details>
+        </aside>
+        </div>
+        <div class="console-bottom"><span class="speaker" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>EVERY CHOICE WRITES A DIFFERENT ENDING</span><span class="little-heart" aria-hidden="true">♥</span></div>
+      </section>
+    </main>
+    <footer class="page-footer"><span>한 번에 하나의 스토리팩, 오직 그 이야기 속으로.</span><span>MADE FOR SLOW, AUTUMN MOMENTS <span aria-hidden="true">❧</span></span></footer>
+  </div>
+</body>
+</html>
+

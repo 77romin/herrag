@@ -1,0 +1,295 @@
+{
+  "use_rag=True (RAG 경로)": {
+    "total_ms": 4275.0515999796335,
+    "retrieve": {
+      "ms": 376.13089999649674,
+      "chars": 1701,
+      "n": 5
+    },
+    "tree": [
+      {
+        "kind": "chain",
+        "name": "LangGraph",
+        "parent": null,
+        "ms": 4274.867199972505,
+        "payload": {},
+        "children": [
+          "01a06b07-836c-73a2-888f-5e240dd92bde",
+          "01a06b07-836c-73a2-888f-5e595b820463",
+          "01a06b07-84e5-7712-af61-e19fae57031b"
+        ]
+      },
+      {
+        "kind": "chain",
+        "name": "__start__",
+        "parent": "01a06b07-836b-7250-90e9-8fa0152cb38e",
+        "ms": 0.19019999308511615,
+        "payload": {},
+        "children": [
+          "01a06b07-836c-73a2-888f-5e33ee68a9bf",
+          "01a06b07-836c-73a2-888f-5e4acd88aa8e"
+        ]
+      },
+      {
+        "kind": "chain",
+        "name": "ChannelWrite<...>",
+        "parent": "01a06b07-836c-73a2-888f-5e240dd92bde",
+        "ms": 0.023900007363408804,
+        "payload": {},
+        "children": []
+      },
+      {
+        "kind": "chain",
+        "name": "route_by_rag_flag",
+        "parent": "01a06b07-836c-73a2-888f-5e240dd92bde",
+        "ms": 0.010100018698722124,
+        "payload": {},
+        "children": []
+      },
+      {
+        "kind": "chain",
+        "name": "retrieve",
+        "parent": "01a06b07-836b-7250-90e9-8fa0152cb38e",
+        "ms": 376.2713000178337,
+        "payload": {},
+        "children": [
+          "01a06b07-84e4-7cd3-8890-b9a806e4f5a4"
+        ]
+      },
+      {
+        "kind": "chain",
+        "name": "ChannelWrite<...,retrieve>",
+        "parent": "01a06b07-836c-73a2-888f-5e595b820463",
+        "ms": 0.03779999678954482,
+        "payload": {},
+        "children": []
+      },
+      {
+        "kind": "chain",
+        "name": "generate",
+        "parent": "01a06b07-836b-7250-90e9-8fa0152cb38e",
+        "ms": 3897.3471999925096,
+        "payload": {},
+        "children": [
+          "01a06b07-84e7-7ac1-b375-f61ab06b76f1",
+          "01a06b07-941e-7082-90f2-cbbd3a403dc8"
+        ]
+      },
+      {
+        "kind": "chain",
+        "name": "RunnableSequence",
+        "parent": "01a06b07-84e5-7712-af61-e19fae57031b",
+        "ms": 3894.832799996948,
+        "payload": {},
+        "children": [
+          "01a06b07-84e7-7ac1-b375-f62dc48c27e5",
+          "01a06b07-84e8-7c71-8e06-e0df4849b4be"
+        ]
+      },
+      {
+        "kind": "chain",
+        "name": "ChatPromptTemplate",
+        "parent": "01a06b07-84e7-7ac1-b375-f61ab06b76f1",
+        "ms": 0.1629000180400908,
+        "payload": {},
+        "children": []
+      },
+      {
+        "kind": "llm",
+        "name": "ChatOpenAI",
+        "parent": "01a06b07-84e7-7ac1-b375-f61ab06b76f1",
+        "ms": 3894.2552999942563,
+        "payload": {
+          "messages": [
+            {
+              "role": "SystemMessage",
+              "chars": 1870,
+              "preview": "당신은 SSAFY 교육 과정을 돕는 AI 어시스턴트입니다.\n아래의 [참고 문서] 내용을 바탕으로 사용자의 질문에 답변하세요.\n답변은 필요한 말만 두괄식으로 간략하게 하세요. 불필요한 서론은 생략하세요.\n[참고문서]에 없는 내용은 '문의 사항은 참고 문서에 없습니다.' 라고만 답하세요.\n\n[참고문서]\n\n| 구분 | 주동자 | 조력자 |\n| :--- | :---: | :---: |\n| 시스템 취약점을 유용한 부정 출결<br>(교육장 미입실 상태 출결 체크)<br>`* 교육생 본인 자리 외 구역에서 학사 시스템 접속 후 출석 확인` | 퇴소 | - |\n| 시스템 우회 접속을 통한 부정 출결<br>(교육장 미입실 상태 출결 체크)<br>`* 교육장 PC내 원격 프로그램 설치 후 원격으로 출석 확인` | 퇴소 | -"
+            },
+            {
+              "role": "HumanMessage",
+              "chars": 39,
+              "preview": "교육 명찰을 분실했을 때는 어떻게 해야 하나요? 재발급 비용이 있나요?"
+            }
+          ],
+          "prompt_chars": 1909,
+          "tokens": {
+            "completion_tokens": 274,
+            "prompt_tokens": 1120,
+            "total_tokens": 1394,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 256,
+              "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 1024
+            }
+          },
+          "output_chars": 19,
+          "output_preview": "문의 사항은 참고 문서에 없습니다."
+        },
+        "children": []
+      },
+      {
+        "kind": "chain",
+        "name": "ChannelWrite<...,generate>",
+        "parent": "01a06b07-84e5-7712-af61-e19fae57031b",
+        "ms": 0.02400000812485814,
+        "payload": {},
+        "children": []
+      }
+    ],
+    "lines": [
+      "[chain] LangGraph                      4274.9 ms",
+      "│  ├─ [chain] __start__                         0.2 ms",
+      "│  │  ├─ [chain] ChannelWrite<...>                 0.0 ms",
+      "│  │  ├─ [chain] route_by_rag_flag                 0.0 ms",
+      "│  ├─ [chain] retrieve                        376.3 ms",
+      "│  │  ├─ [chain] ChannelWrite<...,retrieve>        0.0 ms",
+      "│  ├─ [chain] generate                       3897.3 ms",
+      "│  │  ├─ [chain] RunnableSequence               3894.8 ms",
+      "│  │  │  ├─ [chain] ChatPromptTemplate                0.2 ms",
+      "│  │  │  ├─ [llm] ChatOpenAI                     3894.3 ms  prompt 1,909자 / in 1120 tok / out 274 tok",
+      "│  │  ├─ [chain] ChannelWrite<...,generate>        0.0 ms"
+    ],
+    "answer": "문의 사항은 참고 문서에 없습니다."
+  },
+  "use_rag=False (일반 경로)": {
+    "total_ms": 9711.065599985886,
+    "retrieve": {},
+    "tree": [
+      {
+        "kind": "chain",
+        "name": "LangGraph",
+        "parent": null,
+        "ms": 9710.982599994168,
+        "payload": {},
+        "children": [
+          "01a06b07-941f-79c3-b62f-5e0e24af63a7",
+          "01a06b07-9420-78e1-855c-5261552ba713"
+        ]
+      },
+      {
+        "kind": "chain",
+        "name": "__start__",
+        "parent": "01a06b07-941f-79c3-b62f-5df2edd01b77",
+        "ms": 0.10949998977594078,
+        "payload": {},
+        "children": [
+          "01a06b07-941f-79c3-b62f-5e1ad589693c",
+          "01a06b07-9420-78e1-855c-525590d4f8ff"
+        ]
+      },
+      {
+        "kind": "chain",
+        "name": "ChannelWrite<...>",
+        "parent": "01a06b07-941f-79c3-b62f-5e0e24af63a7",
+        "ms": 0.015100027667358518,
+        "payload": {},
+        "children": []
+      },
+      {
+        "kind": "chain",
+        "name": "route_by_rag_flag",
+        "parent": "01a06b07-941f-79c3-b62f-5e0e24af63a7",
+        "ms": 0.007800001185387373,
+        "payload": {},
+        "children": []
+      },
+      {
+        "kind": "chain",
+        "name": "generate",
+        "parent": "01a06b07-941f-79c3-b62f-5df2edd01b77",
+        "ms": 9710.326600004919,
+        "payload": {},
+        "children": [
+          "01a06b07-9420-78e1-855c-5279728ac5c5",
+          "01a06b07-ba0e-7ec1-bc52-8a9ed41b52e6"
+        ]
+      },
+      {
+        "kind": "chain",
+        "name": "RunnableSequence",
+        "parent": "01a06b07-9420-78e1-855c-5261552ba713",
+        "ms": 9709.998700011056,
+        "payload": {},
+        "children": [
+          "01a06b07-9420-78e1-855c-528ca9aaea91",
+          "01a06b07-9420-78e1-855c-5295bd8b1fe4"
+        ]
+      },
+      {
+        "kind": "chain",
+        "name": "ChatPromptTemplate",
+        "parent": "01a06b07-9420-78e1-855c-5279728ac5c5",
+        "ms": 0.10060000931844115,
+        "payload": {},
+        "children": []
+      },
+      {
+        "kind": "llm",
+        "name": "ChatOpenAI",
+        "parent": "01a06b07-9420-78e1-855c-5279728ac5c5",
+        "ms": 9709.564999997383,
+        "payload": {
+          "messages": [
+            {
+              "role": "SystemMessage",
+              "chars": 67,
+              "preview": "당신은 SSAFY 교육 과정을 돕는 친절한 AI 어시스턴트입니다. 사용자 질문에 대해 최선을 다해 친절하게 답변해주세요."
+            },
+            {
+              "role": "HumanMessage",
+              "chars": 39,
+              "preview": "교육 명찰을 분실했을 때는 어떻게 해야 하나요? 재발급 비용이 있나요?"
+            }
+          ],
+          "prompt_chars": 106,
+          "tokens": {
+            "completion_tokens": 792,
+            "prompt_tokens": 70,
+            "total_tokens": 862,
+            "completion_tokens_details": {
+              "accepted_prediction_tokens": 0,
+              "audio_tokens": 0,
+              "reasoning_tokens": 320,
+              "rejected_prediction_tokens": 0
+            },
+            "prompt_tokens_details": {
+              "audio_tokens": 0,
+              "cache_write_tokens": null,
+              "cached_tokens": 0
+            }
+          },
+          "output_chars": 808,
+          "output_preview": "분실했을 때는 빠르게 신고하고 재발급 절차를 밟는 것이 중요합니다. 일반적인 처리 순서와 유의사항은 다음과 같습니다.\n\n1. 즉시 신고\n- 분실 사실을 소속 운영팀(혹은 담당 멘토/매니저)에게 바로 알리세요. 출입·보안·복지 등 문제(출입카드 기능 포함)가 있을 수 있어 즉시 조치해야 합니다.\n\n2. 임시조치 요청\n- 재발급 전까지 출입이나 수업 참석에 문제가 없도록 임시 출입증 또는 허가를 요청하세요.\n\n3. 재발급 신청\n- 운영팀에서 재발급 신청서(온라인 또는 서면)를 작성하도록 안내합니다. 보통 신분증 제시가 필요합니다(주민등"
+        },
+        "children": []
+      },
+      {
+        "kind": "chain",
+        "name": "ChannelWrite<...,generate>",
+        "parent": "01a06b07-9420-78e1-855c-5261552ba713",
+        "ms": 0.12539999443106353,
+        "payload": {},
+        "children": []
+      }
+    ],
+    "lines": [
+      "[chain] LangGraph                      9711.0 ms",
+      "│  ├─ [chain] __start__                         0.1 ms",
+      "│  │  ├─ [chain] ChannelWrite<...>                 0.0 ms",
+      "│  │  ├─ [chain] route_by_rag_flag                 0.0 ms",
+      "│  ├─ [chain] generate                       9710.3 ms",
+      "│  │  ├─ [chain] RunnableSequence               9710.0 ms",
+      "│  │  │  ├─ [chain] ChatPromptTemplate                0.1 ms",
+      "│  │  │  ├─ [llm] ChatOpenAI                     9709.6 ms  prompt 106자 / in 70 tok / out 792 tok",
+      "│  │  ├─ [chain] ChannelWrite<...,generate>        0.1 ms"
+    ],
+    "answer": "분실했을 때는 빠르게 신고하고 재발급 절차를 밟는 것이 중요합니다. 일반적인 처리 순서와 유의사항은 다음과 같습니다.\n\n1. 즉시 신고\n- 분실 사실을 소속 운영팀(혹은 담당 멘토/매니저)에게 바로 알리세요. 출입·보안·복지 등 문제(출입카드 기능 포함)가 있을 수 있어 즉시 조치해야 합니다.\n\n2. 임시조치 요청\n- 재발급 전까지 출입이나 수업 참석에 문제가 없도록 임시 출입증 또는 허가를 요청하세요.\n\n3. 재발급 신청\n- 운영팀에서 재발급 신청서(온라인 또는 서면)를 작성하도록 안내합니다. 보통 신분증 제시가 필요합니다(주민등록증, 학생증 등).\n\n4. 비용 및 소요시간\n- 재발급 비용과 소요시간은 센터(캠퍼스)마다 다릅니다. 대부분 소액의 재발급 수수료가 있으며(센터에 따라 예: 5,000~10,000원 수준인 경우가 많음), 제작 및 발급까지 며칠이 걸릴 수 있습니다. 정확한 비용·기간은 소속 SSAFY 캠퍼스 운영팀에 문의하세요.\n\n5. 분실 예방 및 처리 기록\n- 분실 경위와 신고 일시를 기록해 두면 분실 관련 문제 발생 시 도움이 됩니다. 카드에 개인정보가 포함돼있다면 악용 여부를 주의하세요.\n\n원하시면:\n- 소속 캠퍼스와 과정(예: 지역센터/기수)을 알려주시면 해당 운영팀 연락처나 보다 구체적인 절차를 찾아드리겠습니다.\n- 운영팀에 보낼 간단한 신고문 예시도 만들어 드릴게요.\n\n간단한 신고문 예시 (복사해서 사용 가능)\n안녕하세요, 저는 [이름]([기수]/[팀])입니다. 교육 명찰(출입증)을 분실하여 신고합니다. 임시 출입증 발급 및 재발급 절차 안내 부탁드립니다. 문의 연락처: [휴대폰번호]. 감사합니다."
+  }
+}

@@ -1,0 +1,33 @@
+const fs = require('fs');
+const source = fs.readFileSync('tmp/qa-story-ui.cjs', 'utf8');
+const prefix = source.slice(0, source.indexOf('(async()=>{'));
+fs.writeFileSync('tmp/qa-story-brief.cjs', prefix + `
+Element.prototype.requestSubmit = function() { return this.fire('submit'); };
+context.setTimeout = setTimeout;
+(async () => {
+ state('controls(false)');
+ assert.equal(ids['welcome-start'].disabled, true);
+ await ids.samples.children[0].click();
+ assert.equal(ids['welcome-start'].disabled, false);
+ data.brief = {location:'임의의 항구', player:'여행자', unknown:'스포일러'};
+ await ids['welcome-start'].click();
+ await new Promise(resolve=>setTimeout(resolve,30));
+ assert.equal(state('revision'), 'revision-1');
+ assert.equal(ids['story-brief'].hidden, false);
+ assert.equal(ids['brief-facts'].children.length, 4);
+ assert.equal(ids['brief-facts'].children[1].textContent, '임의의 항구');
+ await ids.samples.children[1].click();
+ assert.equal(ids['brief-facts'].children[1].textContent, '임의의 항구');
+ uploadFail=true;await ids['upload-form'].fire('submit');
+ assert.equal(ids['brief-facts'].children[1].textContent, '임의의 항구');
+ uploadFail=false;data.brief={situation:'처음 만난 도서관'};
+ await ids['upload-form'].fire('submit');
+ assert.equal(ids['brief-facts'].children.length,2);
+ assert.equal(ids['brief-facts'].children[1].textContent,'처음 만난 도서관');
+ await ids.reset.click();
+ assert.equal(ids['story-brief'].hidden,true);
+ assert.equal(ids['brief-facts'].children.length,0);
+ assert.equal(ids['welcome-start'].disabled,true);
+ console.log('PASS: start gating/action, custom brief display, whitelist, failed replacement preserves brief, successful replacement and reset.');
+})().catch(error=>{console.error(error);process.exitCode=1;});
+`);

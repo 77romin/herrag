@@ -1,0 +1,667 @@
+{
+  "recursive-300|small": {
+    "info": {
+      "chunks": 49,
+      "len_min": 17,
+      "len_med": 216,
+      "len_max": 299,
+      "over_size": 0,
+      "anchor_missing": 0
+    },
+    "dense": {
+      "recall@1": 0.8,
+      "recall@3": 0.9,
+      "recall@5": 0.9,
+      "recall@10": 1.0,
+      "MRR": 0.8666666666666666
+    },
+    "bm25": {
+      "recall@1": 0.6,
+      "recall@3": 0.9,
+      "recall@5": 0.9,
+      "recall@10": 1.0,
+      "MRR": 0.75
+    },
+    "hybrid": {
+      "recall@1": 0.7,
+      "recall@3": 0.9,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.8083333333333333
+    },
+    "detail": [
+      {
+        "q": "예비군 훈련으로 결석하는 경우는 어떻게 처리되나요?",
+        "gold_chunk": 2,
+        "dense": 1,
+        "bm25": 2,
+        "hybrid": 1,
+        "cos": 0.4206,
+        "relevance_l2": 0.1806,
+        "relevance_cos": 0.4206
+      },
+      {
+        "q": "결혼이나 배우자 출산과 같은 경조사 시 며칠 동안 공가가 인정되나요?",
+        "gold_chunk": 9,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5664,
+        "relevance_l2": 0.3868,
+        "relevance_cos": 0.5664
+      },
+      {
+        "q": "지각, 조퇴, 외출이 누적되면 결석으로 처리되나요? 그리고 중도 퇴소 기",
+        "gold_chunk": 5,
+        "dense": 6,
+        "bm25": 1,
+        "hybrid": 3,
+        "cos": 0.4493,
+        "relevance_l2": 0.2212,
+        "relevance_cos": 0.4493
+      },
+      {
+        "q": "정규 교육 시간과 점심 시간은 각각 몇 시부터 몇 시까지인가요?",
+        "gold_chunk": 12,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5273,
+        "relevance_l2": 0.3314,
+        "relevance_cos": 0.5273
+      },
+      {
+        "q": "교육장 안에서 휴대전화를 사용할 수 있나요? 외부 음식 반입 규정도 알려",
+        "gold_chunk": 14,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5526,
+        "relevance_l2": 0.3673,
+        "relevance_cos": 0.5526
+      },
+      {
+        "q": "교육 명찰을 분실했을 때는 어떻게 해야 하나요? 재발급 비용이 있나요?",
+        "gold_chunk": 25,
+        "dense": 1,
+        "bm25": 2,
+        "hybrid": 2,
+        "cos": 0.511,
+        "relevance_l2": 0.3084,
+        "relevance_cos": 0.511
+      },
+      {
+        "q": "광주나 부울경 캠퍼스에 저장매체나 노트북을 반입할 때 어떤 보안 규정을 ",
+        "gold_chunk": 26,
+        "dense": 2,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.4279,
+        "relevance_l2": 0.1909,
+        "relevance_cos": 0.4279
+      },
+      {
+        "q": "성적 평가에서 과목 평가는 총 몇 회 실시되며 수료 기준은 어떻게 되나요",
+        "gold_chunk": 34,
+        "dense": 1,
+        "bm25": 6,
+        "hybrid": 4,
+        "cos": 0.5352,
+        "relevance_l2": 0.3426,
+        "relevance_cos": 0.5352
+      },
+      {
+        "q": "장학 제도의 지급 대상과 지급 시기는 어떻게 되나요?",
+        "gold_chunk": 24,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5628,
+        "relevance_l2": 0.3817,
+        "relevance_cos": 0.5628
+      },
+      {
+        "q": "출석 관리 상세 지침에서 지각과 조퇴의 명확한 체크 기준 시간은 언제인가",
+        "gold_chunk": 6,
+        "dense": 1,
+        "bm25": 3,
+        "hybrid": 1,
+        "cos": 0.5242,
+        "relevance_l2": 0.3271,
+        "relevance_cos": 0.5242
+      }
+    ]
+  },
+  "recursive-500|small": {
+    "info": {
+      "chunks": 30,
+      "len_min": 40,
+      "len_med": 340,
+      "len_max": 492,
+      "over_size": 0,
+      "anchor_missing": 0
+    },
+    "dense": {
+      "recall@1": 0.6,
+      "recall@3": 0.8,
+      "recall@5": 0.9,
+      "recall@10": 1.0,
+      "MRR": 0.7416666666666667
+    },
+    "bm25": {
+      "recall@1": 0.8,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.8666666666666666
+    },
+    "hybrid": {
+      "recall@1": 0.7,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.85
+    },
+    "detail": [
+      {
+        "q": "예비군 훈련으로 결석하는 경우는 어떻게 처리되나요?",
+        "gold_chunk": 1,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.4144,
+        "relevance_l2": 0.1718,
+        "relevance_cos": 0.4144
+      },
+      {
+        "q": "결혼이나 배우자 출산과 같은 경조사 시 며칠 동안 공가가 인정되나요?",
+        "gold_chunk": 5,
+        "dense": 2,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.4757,
+        "relevance_l2": 0.2585,
+        "relevance_cos": 0.4757
+      },
+      {
+        "q": "지각, 조퇴, 외출이 누적되면 결석으로 처리되나요? 그리고 중도 퇴소 기",
+        "gold_chunk": 2,
+        "dense": 4,
+        "bm25": 1,
+        "hybrid": 2,
+        "cos": 0.4519,
+        "relevance_l2": 0.2248,
+        "relevance_cos": 0.4519
+      },
+      {
+        "q": "정규 교육 시간과 점심 시간은 각각 몇 시부터 몇 시까지인가요?",
+        "gold_chunk": 8,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5201,
+        "relevance_l2": 0.3213,
+        "relevance_cos": 0.5201
+      },
+      {
+        "q": "교육장 안에서 휴대전화를 사용할 수 있나요? 외부 음식 반입 규정도 알려",
+        "gold_chunk": 9,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5734,
+        "relevance_l2": 0.3967,
+        "relevance_cos": 0.5734
+      },
+      {
+        "q": "교육 명찰을 분실했을 때는 어떻게 해야 하나요? 재발급 비용이 있나요?",
+        "gold_chunk": 16,
+        "dense": 6,
+        "bm25": 1,
+        "hybrid": 2,
+        "cos": 0.4062,
+        "relevance_l2": 0.1603,
+        "relevance_cos": 0.4062
+      },
+      {
+        "q": "광주나 부울경 캠퍼스에 저장매체나 노트북을 반입할 때 어떤 보안 규정을 ",
+        "gold_chunk": 16,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.4886,
+        "relevance_l2": 0.2768,
+        "relevance_cos": 0.4886
+      },
+      {
+        "q": "성적 평가에서 과목 평가는 총 몇 회 실시되며 수료 기준은 어떻게 되나요",
+        "gold_chunk": 20,
+        "dense": 2,
+        "bm25": 3,
+        "hybrid": 2,
+        "cos": 0.5208,
+        "relevance_l2": 0.3223,
+        "relevance_cos": 0.5208
+      },
+      {
+        "q": "장학 제도의 지급 대상과 지급 시기는 어떻게 되나요?",
+        "gold_chunk": 15,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5628,
+        "relevance_l2": 0.3817,
+        "relevance_cos": 0.5628
+      },
+      {
+        "q": "출석 관리 상세 지침에서 지각과 조퇴의 명확한 체크 기준 시간은 언제인가",
+        "gold_chunk": 3,
+        "dense": 1,
+        "bm25": 3,
+        "hybrid": 1,
+        "cos": 0.5242,
+        "relevance_l2": 0.3271,
+        "relevance_cos": 0.5242
+      }
+    ]
+  },
+  "recursive-500|large": {
+    "info": {
+      "chunks": 30,
+      "len_min": 40,
+      "len_med": 340,
+      "len_max": 492,
+      "over_size": 0,
+      "anchor_missing": 0
+    },
+    "dense": {
+      "recall@1": 0.7,
+      "recall@3": 0.9,
+      "recall@5": 0.9,
+      "recall@10": 0.9,
+      "MRR": 0.7876811594202898
+    },
+    "bm25": {
+      "recall@1": 0.8,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.8666666666666666
+    },
+    "hybrid": {
+      "recall@1": 0.8,
+      "recall@3": 0.9,
+      "recall@5": 0.9,
+      "recall@10": 1.0,
+      "MRR": 0.8458333333333334
+    },
+    "detail": [
+      {
+        "q": "예비군 훈련으로 결석하는 경우는 어떻게 처리되나요?",
+        "gold_chunk": 1,
+        "dense": 3,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.4936,
+        "relevance_l2": 0.2838,
+        "relevance_cos": 0.4936
+      },
+      {
+        "q": "결혼이나 배우자 출산과 같은 경조사 시 며칠 동안 공가가 인정되나요?",
+        "gold_chunk": 5,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5677,
+        "relevance_l2": 0.3886,
+        "relevance_cos": 0.5677
+      },
+      {
+        "q": "지각, 조퇴, 외출이 누적되면 결석으로 처리되나요? 그리고 중도 퇴소 기",
+        "gold_chunk": 2,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.6049,
+        "relevance_l2": 0.4412,
+        "relevance_cos": 0.6049
+      },
+      {
+        "q": "정규 교육 시간과 점심 시간은 각각 몇 시부터 몇 시까지인가요?",
+        "gold_chunk": 8,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5407,
+        "relevance_l2": 0.3504,
+        "relevance_cos": 0.5407
+      },
+      {
+        "q": "교육장 안에서 휴대전화를 사용할 수 있나요? 외부 음식 반입 규정도 알려",
+        "gold_chunk": 9,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5777,
+        "relevance_l2": 0.4027,
+        "relevance_cos": 0.5777
+      },
+      {
+        "q": "교육 명찰을 분실했을 때는 어떻게 해야 하나요? 재발급 비용이 있나요?",
+        "gold_chunk": 16,
+        "dense": 23,
+        "bm25": 1,
+        "hybrid": 8,
+        "cos": 0.2814,
+        "relevance_l2": -0.0163,
+        "relevance_cos": 0.2814
+      },
+      {
+        "q": "광주나 부울경 캠퍼스에 저장매체나 노트북을 반입할 때 어떤 보안 규정을 ",
+        "gold_chunk": 16,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.6655,
+        "relevance_l2": 0.5269,
+        "relevance_cos": 0.6655
+      },
+      {
+        "q": "성적 평가에서 과목 평가는 총 몇 회 실시되며 수료 기준은 어떻게 되나요",
+        "gold_chunk": 20,
+        "dense": 2,
+        "bm25": 3,
+        "hybrid": 3,
+        "cos": 0.524,
+        "relevance_l2": 0.3268,
+        "relevance_cos": 0.524
+      },
+      {
+        "q": "장학 제도의 지급 대상과 지급 시기는 어떻게 되나요?",
+        "gold_chunk": 15,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.6337,
+        "relevance_l2": 0.4819,
+        "relevance_cos": 0.6337
+      },
+      {
+        "q": "출석 관리 상세 지침에서 지각과 조퇴의 명확한 체크 기준 시간은 언제인가",
+        "gold_chunk": 3,
+        "dense": 1,
+        "bm25": 3,
+        "hybrid": 1,
+        "cos": 0.4954,
+        "relevance_l2": 0.2864,
+        "relevance_cos": 0.4954
+      }
+    ]
+  },
+  "recursive-1000|small": {
+    "info": {
+      "chunks": 13,
+      "len_min": 269,
+      "len_med": 871,
+      "len_max": 985,
+      "over_size": 0,
+      "anchor_missing": 0
+    },
+    "dense": {
+      "recall@1": 0.5,
+      "recall@3": 0.7,
+      "recall@5": 0.9,
+      "recall@10": 1.0,
+      "MRR": 0.6458333333333333
+    },
+    "bm25": {
+      "recall@1": 0.8,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.8833333333333334
+    },
+    "hybrid": {
+      "recall@1": 0.6,
+      "recall@3": 0.9,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.775
+    },
+    "detail": [
+      {
+        "q": "예비군 훈련으로 결석하는 경우는 어떻게 처리되나요?",
+        "gold_chunk": 0,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.4047,
+        "relevance_l2": 0.1582,
+        "relevance_cos": 0.4047
+      },
+      {
+        "q": "결혼이나 배우자 출산과 같은 경조사 시 며칠 동안 공가가 인정되나요?",
+        "gold_chunk": 2,
+        "dense": 2,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.3151,
+        "relevance_l2": 0.0314,
+        "relevance_cos": 0.3151
+      },
+      {
+        "q": "지각, 조퇴, 외출이 누적되면 결석으로 처리되나요? 그리고 중도 퇴소 기",
+        "gold_chunk": 0,
+        "dense": 4,
+        "bm25": 1,
+        "hybrid": 2,
+        "cos": 0.4302,
+        "relevance_l2": 0.1941,
+        "relevance_cos": 0.4302
+      },
+      {
+        "q": "정규 교육 시간과 점심 시간은 각각 몇 시부터 몇 시까지인가요?",
+        "gold_chunk": 3,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5201,
+        "relevance_l2": 0.3213,
+        "relevance_cos": 0.5201
+      },
+      {
+        "q": "교육장 안에서 휴대전화를 사용할 수 있나요? 외부 음식 반입 규정도 알려",
+        "gold_chunk": 4,
+        "dense": 8,
+        "bm25": 1,
+        "hybrid": 4,
+        "cos": 0.3577,
+        "relevance_l2": 0.0917,
+        "relevance_cos": 0.3577
+      },
+      {
+        "q": "교육 명찰을 분실했을 때는 어떻게 해야 하나요? 재발급 비용이 있나요?",
+        "gold_chunk": 6,
+        "dense": 3,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.4487,
+        "relevance_l2": 0.2203,
+        "relevance_cos": 0.4487
+      },
+      {
+        "q": "광주나 부울경 캠퍼스에 저장매체나 노트북을 반입할 때 어떤 보안 규정을 ",
+        "gold_chunk": 6,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.4193,
+        "relevance_l2": 0.1788,
+        "relevance_cos": 0.4193
+      },
+      {
+        "q": "성적 평가에서 과목 평가는 총 몇 회 실시되며 수료 기준은 어떻게 되나요",
+        "gold_chunk": 8,
+        "dense": 1,
+        "bm25": 2,
+        "hybrid": 2,
+        "cos": 0.5065,
+        "relevance_l2": 0.3021,
+        "relevance_cos": 0.5065
+      },
+      {
+        "q": "장학 제도의 지급 대상과 지급 시기는 어떻게 되나요?",
+        "gold_chunk": 6,
+        "dense": 4,
+        "bm25": 1,
+        "hybrid": 2,
+        "cos": 0.3626,
+        "relevance_l2": 0.0985,
+        "relevance_cos": 0.3626
+      },
+      {
+        "q": "출석 관리 상세 지침에서 지각과 조퇴의 명확한 체크 기준 시간은 언제인가",
+        "gold_chunk": 1,
+        "dense": 1,
+        "bm25": 3,
+        "hybrid": 1,
+        "cos": 0.5242,
+        "relevance_l2": 0.3271,
+        "relevance_cos": 0.5242
+      }
+    ]
+  },
+  "markdown-500|small": {
+    "info": {
+      "chunks": 30,
+      "len_min": 109,
+      "len_med": 370,
+      "len_max": 539,
+      "over_size": 4,
+      "anchor_missing": 0
+    },
+    "dense": {
+      "recall@1": 0.5,
+      "recall@3": 0.8,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.645
+    },
+    "bm25": {
+      "recall@1": 0.8,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.8833333333333334
+    },
+    "hybrid": {
+      "recall@1": 0.7,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.85
+    },
+    "detail": [
+      {
+        "q": "예비군 훈련으로 결석하는 경우는 어떻게 처리되나요?",
+        "gold_chunk": 0,
+        "dense": 4,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.3837,
+        "relevance_l2": 0.1285,
+        "relevance_cos": 0.3837
+      },
+      {
+        "q": "결혼이나 배우자 출산과 같은 경조사 시 며칠 동안 공가가 인정되나요?",
+        "gold_chunk": 4,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.4621,
+        "relevance_l2": 0.2393,
+        "relevance_cos": 0.4621
+      },
+      {
+        "q": "지각, 조퇴, 외출이 누적되면 결석으로 처리되나요? 그리고 중도 퇴소 기",
+        "gold_chunk": 1,
+        "dense": 5,
+        "bm25": 1,
+        "hybrid": 2,
+        "cos": 0.4673,
+        "relevance_l2": 0.2467,
+        "relevance_cos": 0.4673
+      },
+      {
+        "q": "정규 교육 시간과 점심 시간은 각각 몇 시부터 몇 시까지인가요?",
+        "gold_chunk": 7,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5484,
+        "relevance_l2": 0.3614,
+        "relevance_cos": 0.5484
+      },
+      {
+        "q": "교육장 안에서 휴대전화를 사용할 수 있나요? 외부 음식 반입 규정도 알려",
+        "gold_chunk": 8,
+        "dense": 3,
+        "bm25": 1,
+        "hybrid": 2,
+        "cos": 0.4855,
+        "relevance_l2": 0.2723,
+        "relevance_cos": 0.4855
+      },
+      {
+        "q": "교육 명찰을 분실했을 때는 어떻게 해야 하나요? 재발급 비용이 있나요?",
+        "gold_chunk": 15,
+        "dense": 3,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.4659,
+        "relevance_l2": 0.2446,
+        "relevance_cos": 0.4659
+      },
+      {
+        "q": "광주나 부울경 캠퍼스에 저장매체나 노트북을 반입할 때 어떤 보안 규정을 ",
+        "gold_chunk": 15,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.473,
+        "relevance_l2": 0.2547,
+        "relevance_cos": 0.473
+      },
+      {
+        "q": "성적 평가에서 과목 평가는 총 몇 회 실시되며 수료 기준은 어떻게 되나요",
+        "gold_chunk": 20,
+        "dense": 3,
+        "bm25": 3,
+        "hybrid": 2,
+        "cos": 0.5056,
+        "relevance_l2": 0.3009,
+        "relevance_cos": 0.5056
+      },
+      {
+        "q": "장학 제도의 지급 대상과 지급 시기는 어떻게 되나요?",
+        "gold_chunk": 14,
+        "dense": 1,
+        "bm25": 1,
+        "hybrid": 1,
+        "cos": 0.5872,
+        "relevance_l2": 0.4162,
+        "relevance_cos": 0.5872
+      },
+      {
+        "q": "출석 관리 상세 지침에서 지각과 조퇴의 명확한 체크 기준 시간은 언제인가",
+        "gold_chunk": 2,
+        "dense": 1,
+        "bm25": 2,
+        "hybrid": 1,
+        "cos": 0.5468,
+        "relevance_l2": 0.3591,
+        "relevance_cos": 0.5468
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "input": "왜 저한테 말을 거셨어요?",
+    "answer": "해린이 공용 부엌에서 남은 귤을 가리키며 고개를 약간 숙인다.\n아, 죄송해요. 혼자 계신 것 같아서 괜찮으실까 해서요. 혼자 드실 거면, 여기 앉으셔도 돼요",
+    "scene": 1,
+    "grounding": "supported",
+    "ended": false,
+    "seconds": 24.44
+  },
+  {
+    "input": "좋아요. 같이 정리할게요.",
+    "error": "Story response still inconsistent after one repair"
+  },
+  {
+    "input": "요즘 공부가 힘들어서 쉬러 왔어요. 해린 씨는요?",
+    "answer": "해린이 사용자의 말을 듣고 살짝 고개를 끄덕인 뒤 부엌 의자 손잡이에 손을 올린다.\n공부하시느라 많이 지치셨겠네요, 쉬러 오신 건 잘하셨어요. 저는 서점 준비로 한 달 살기 중이에요, 주로 조용히 지내려고 왔습니다. 혼자 드실 거면, 여기 앉으셔도 돼요",
+    "scene": 1,
+    "grounding": "supported",
+    "ended": false,
+    "seconds": 23.91
+  },
+  {
+    "isolated_final": true,
+    "input": "친구로 연락하며 지내고 싶어요.",
+    "answer": "해린이 조용히 미소 지으며 고개를 끄덕인다.\n윤해린 말한다.\n친구로 응원해주신다니 정말 고맙습니다. 개업 소식은 꼭 보내드릴게요, 가끔 안부도 물어봐 주세요.",
+    "ended": true,
+    "ending_title": "바람이 전하는 안부",
+    "session_deleted": true
+  }
+]

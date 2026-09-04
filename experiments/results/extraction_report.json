@@ -1,0 +1,158 @@
+{
+  "md_raw": {
+    "chars": 9153,
+    "chunks": 30,
+    "len_med": 340,
+    "len_max": 492,
+    "max_source_line": 615,
+    "dense": {
+      "recall@1": 0.6,
+      "recall@3": 0.8,
+      "recall@5": 0.9,
+      "recall@10": 1.0,
+      "MRR": 0.7416666666666667
+    },
+    "bm25": {
+      "recall@1": 0.8,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.8666666666666666
+    },
+    "hybrid": {
+      "recall@1": 0.7,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.85
+    },
+    "gold_ranks_dense": [
+      1,
+      2,
+      4,
+      1,
+      1,
+      6,
+      1,
+      2,
+      1,
+      1
+    ],
+    "gold_ranks_hybrid": [
+      1,
+      1,
+      2,
+      1,
+      1,
+      2,
+      1,
+      2,
+      1,
+      1
+    ]
+  },
+  "txt_plain": {
+    "chars": 7592,
+    "chunks": 18,
+    "len_med": 444,
+    "len_max": 488,
+    "max_source_line": 95,
+    "dense": {
+      "recall@1": 0.5,
+      "recall@3": 0.9,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.7083333333333333
+    },
+    "bm25": {
+      "recall@1": 0.7,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.85
+    },
+    "hybrid": {
+      "recall@1": 0.9,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.9333333333333333
+    },
+    "gold_ranks_dense": [
+      2,
+      1,
+      2,
+      3,
+      2,
+      4,
+      1,
+      1,
+      1,
+      1
+    ],
+    "gold_ranks_hybrid": [
+      3,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "md_norm": {
+    "chars": 8258,
+    "chunks": 24,
+    "len_med": 388,
+    "len_max": 498,
+    "max_source_line": 95,
+    "dense": {
+      "recall@1": 0.6,
+      "recall@3": 0.8,
+      "recall@5": 0.9,
+      "recall@10": 0.9,
+      "MRR": 0.7340909090909091
+    },
+    "bm25": {
+      "recall@1": 0.6,
+      "recall@3": 0.8,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "MRR": 0.75
+    },
+    "hybrid": {
+      "recall@1": 0.7,
+      "recall@3": 0.9,
+      "recall@5": 0.9,
+      "recall@10": 1.0,
+      "MRR": 0.8
+    },
+    "gold_ranks_dense": [
+      2,
+      1,
+      11,
+      1,
+      2,
+      4,
+      1,
+      1,
+      1,
+      1
+    ],
+    "gold_ranks_hybrid": [
+      3,
+      1,
+      6,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1
+    ]
+  }
+}

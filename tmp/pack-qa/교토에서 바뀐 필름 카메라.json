@@ -1,0 +1,38 @@
+[
+  {
+    "input": "맞아요. 어떻게 아셨죠?",
+    "answer": "그녀가 카메라 스트랩을 가리키며 살짝 웃는다.\n이나경 말한다.\n약간 장난스럽게, 스트랩 색이 달라서 바로 알아봤어요. 혹시 불편하셨다면 죄송해요. 돌려주실래요?",
+    "scene": 1,
+    "grounding": "supported",
+    "ended": false,
+    "seconds": 16.73
+  },
+  {
+    "input": "앗 죄송해요. 제 것이 아니군요",
+    "answer": "나경이 어깨를 으쓱하며 괜찮다고 말하고 손을 내민다.\n이나경 말한다.\n괜찮아요, 신경 쓰지 마세요. 돌려주실래요?",
+    "scene": 1,
+    "grounding": "supported",
+    "ended": false,
+    "seconds": 20.64
+  },
+  {
+    "input": "카메라를 확인했어요. 여기 돌려드릴게요.",
+    "answer": "나경이 카메라를 받아 살짝 웃으며 고개를 끄덕인다.\n이나경 말한다.\n고맙습니다, 괜찮아요. 강변에서 한 장씩 찍으실래요?",
+    "scene": 2,
+    "grounding": "supported",
+    "ended": false,
+    "seconds": 22.19
+  },
+  {
+    "input": "좋아요",
+    "error": "Story response still inconsistent after one repair"
+  },
+  {
+    "isolated_final": true,
+    "input": "사진 친구로 연락하고 싶어요.",
+    "answer": "정말요? 그럼 좋네요, 현상되면 풍경 사진 서로 교환해요.\n나는 미소를 지으며 약속을 확인했다. 필름은 아직 미현상 상태라 결과는 며칠 뒤에야 알게 될 것이다.",
+    "ended": true,
+    "ending_title": "서로의 여행 한 장",
+    "session_deleted": true
+  }
+]
