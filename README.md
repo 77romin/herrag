@@ -1,6 +1,10 @@
 # 🍂 AUTUMN STORY CLUB — 연애 시뮬레이션 챗봇
 
-- 9팀 HerRag : 김강민, 추창우
+
+
+|프로필|팀명|팀원|
+|:---:|:---:|:---:|
+|<img src="https://i.postimg.cc/HsBhxwg6/Her.jpg" width="100">|9팀 HerRAG|김강민, 추창우|
   ``` markdown
     Her + RAG = 허락 / “AI를 사랑해도, 허락?”
     허락(Her + RAG)은 영화 Her에서 착안한 이름으로, AI와 인간 사이의 감정적 교류를 RAG 기반 연애 시뮬레이션으로 재해석한 팀명입니다.
