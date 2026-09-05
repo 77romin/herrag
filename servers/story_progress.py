@@ -1,4 +1,5 @@
 """Evidence-backed progression and question tracking, independent of HTTP/LLM calls."""
+from __future__ import annotations
 import re
 from pydantic import BaseModel, Field, model_validator
 

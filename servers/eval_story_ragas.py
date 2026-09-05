@@ -16,6 +16,9 @@ def run():
     parser.add_argument("--overlap", type=int, default=50)
     parser.add_argument("--k", type=int, default=4)
     parser.add_argument("--threshold", type=float, default=0.15)
+    parser.add_argument("--retrieval-mode", choices=("dense", "bm25", "hybrid"), default="hybrid")
+    parser.add_argument("--dense-weight", type=float, default=0.5)
+    parser.add_argument("--bm25-weight", type=float, default=0.5)
     args = parser.parse_args()
     if not 0 <= args.overlap < args.chunk_size or args.k < 1:
         parser.error("Require 0 <= overlap < chunk-size and k >= 1")
@@ -27,6 +30,7 @@ def run():
     from ragas.llms import LangchainLLMWrapper
     from ragas.embeddings import LangchainEmbeddingsWrapper
     from ragas.metrics import Faithfulness, AnswerRelevancy, LLMContextRecall, ContextPrecision
+    from story_retrieval import StoryRetriever
 
     root = Path(__file__).resolve().parent
     cases = json.loads((root / "story_test_cases.json").read_text(encoding="utf-8"))
@@ -39,12 +43,19 @@ def run():
             docs = main.extract_documents(root.parent / "clients" / "sample_data" / name)
             if not docs:
                 raise RuntimeError(f"Could not read {name}")
-            store.add_documents(main.chunk_documents(docs, args.chunk_size, args.overlap))
+            chunks = main.chunk_documents(docs, args.chunk_size, args.overlap)
+            ids = [f"{name}:{index}" for index in range(len(chunks))]
+            for index, chunk in enumerate(chunks):
+                chunk.metadata.update(pack_id=name, chunk_index=index, chunk_id=ids[index])
+            store.add_documents(chunks, ids=ids)
+        retriever = StoryRetriever(store, mode=args.retrieval_mode,
+            dense_k=max(args.k, 8), bm25_k=max(args.k, 8), final_k=args.k,
+            threshold=args.threshold, dense_weight=args.dense_weight,
+            bm25_weight=args.bm25_weight)
         rows = []
         for case in cases:
-            matches = store.similarity_search_with_relevance_scores(case["question"], k=args.k,
-                score_threshold=args.threshold, filter={"source": case["file"]})
-            contexts = [doc.page_content for doc, _ in matches]
+            matches = retriever.search(case["question"], case["file"])
+            contexts = [hit.text for hit in matches]
             response = llm.invoke([
                 ("system", "시나리오 문서에 대한 질문에 한국어로 답하세요. "
                  "참고 문서의 사실만 사용하여 간결하게 답하세요. 근거가 없으면 문서에서 확인할 수 없다고 답하세요. "

@@ -12,6 +12,7 @@ class Store:
         self.ids = set()
         self.writes = 0
         self.documents = {}
+        self.metadatas = {}
 
     def get(self, ids, include=None):
         present = [key for key in ids if key in self.ids]
@@ -21,6 +22,7 @@ class Store:
         self.ids.update(ids)
         self.writes += 1
         self.documents.update({key: doc.page_content for key, doc in zip(ids, docs)})
+        self.metadatas.update({key: dict(doc.metadata) for key, doc in zip(ids, docs)})
 
 
 class CacheTests(unittest.TestCase):
@@ -73,6 +75,13 @@ class CacheTests(unittest.TestCase):
         self.assertFalse(result["cache_hit"])
         self.assertEqual(self.builds, 1)
         self.assertEqual(self.store.writes, 2)
+
+    def test_new_vectors_include_pack_and_stable_chunk_identity(self):
+        prepared = self.cache().prepare(b"story", "a.md")
+        metadata = self.store.metadatas[prepared["ids"][0]]
+        self.assertEqual(metadata["pack_id"], prepared["vector_key"])
+        self.assertEqual(metadata["chunk_index"], 0)
+        self.assertEqual(metadata["chunk_id"], prepared["ids"][0])
 
     def test_shared_pack_keeps_separate_sessions(self):
         prepared = self.cache().prepare(b"story", "a.md")

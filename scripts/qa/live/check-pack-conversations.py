@@ -1,12 +1,14 @@
-import sys
-sys.path.insert(0, r'C:/SSAFY/chatbot-project_lab/servers/.venv/Lib/site-packages')
-sys.path.insert(0, r'C:/SSAFY/chatbot-project_lab/servers')
 import asyncio
 import json
 import logging
+import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from time import perf_counter
+
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT / "servers"))
+
 import main
 from story_game import StoryGames
 from story_progress import fallback_question
@@ -56,8 +58,9 @@ async def run():
                 rows.append({'isolated_final': True, 'input': ending_message, 'answer': end['answer'], 'ended': end['ended'], 'ending_title': end['ending_title'], 'session_deleted': 'test' not in games.games})
             except Exception as exc:
                 rows.append({'isolated_final': True, 'error': str(exc)})
-            Path('tmp/pack-qa').mkdir(exist_ok=True)
-            (Path('tmp/pack-qa') / (Path(name).stem+'.json')).write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding='utf-8')
+            output_dir = Path('docs/qa/archive/pack-results')
+            output_dir.mkdir(parents=True, exist_ok=True)
+            (output_dir / (Path(name).stem+'.json')).write_text(json.dumps(rows, ensure_ascii=False, indent=2), encoding='utf-8')
             print(json.dumps({'pack': name, **rows[-1]}, ensure_ascii=False), flush=True)
             return {'pack': name, 'rows': rows}
         selected = CASES
@@ -67,6 +70,6 @@ async def run():
         with ThreadPoolExecutor(max_workers=3) as pool:
             results = list(pool.map(check, selected))
         filename = 'pack-conversation-recheck.json' if '--recheck' in sys.argv else 'pack-conversation-results.json'
-        (Path('tmp') / filename).write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding='utf-8')
+        (Path('docs/qa/archive') / filename).write_text(json.dumps(results, ensure_ascii=False, indent=2), encoding='utf-8')
 
 asyncio.run(run())

@@ -1,0 +1,406 @@
+{
+  "settings": {
+    "chunk_size": 500,
+    "overlap": 50,
+    "dense_k": 8,
+    "bm25_k": 8,
+    "final_k": 5,
+    "threshold": 0.15,
+    "dense_weight": 0.5,
+    "bm25_weight": 0.5,
+    "modes": "bm25"
+  },
+  "cases": 10,
+  "modes": {
+    "bm25": {
+      "summary": {
+        "evidence_recall@1": 0.6875,
+        "complete_case_recall@1": 0.6,
+        "evidence_recall@3": 1.0,
+        "complete_case_recall@3": 1.0,
+        "evidence_recall@4": 1.0,
+        "complete_case_recall@4": 1.0,
+        "evidence_recall@5": 1.0,
+        "complete_case_recall@5": 1.0,
+        "mrr": 0.8833333333333334,
+        "avg_context_chars": 1441.1
+      },
+      "rows": [
+        {
+          "file": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md",
+          "question": "현재 장소는 어디이며 두 주인공은 어떤 관계인가요?",
+          "category": "relationship",
+          "evidence_ranks": [
+            1,
+            3,
+            3
+          ],
+          "context_chars": 1475,
+          "hits": [
+            {
+              "id": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md:0",
+              "dense_rank": null,
+              "bm25_rank": 1,
+              "rrf_score": 0.01639344
+            },
+            {
+              "id": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md:5",
+              "dense_rank": null,
+              "bm25_rank": 2,
+              "rrf_score": 0.01612903
+            },
+            {
+              "id": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md:1",
+              "dense_rank": null,
+              "bm25_rank": 3,
+              "rrf_score": 0.01587302
+            },
+            {
+              "id": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md:3",
+              "dense_rank": null,
+              "bm25_rank": 4,
+              "rrf_score": 0.015625
+            },
+            {
+              "id": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md:4",
+              "dense_rank": null,
+              "bm25_rank": 5,
+              "rrf_score": 0.01538462
+            }
+          ]
+        },
+        {
+          "file": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md",
+          "question": "여기 근처 인천 곱창집으로 걸어갈 수 있나요?",
+          "category": "contradiction",
+          "evidence_ranks": [
+            2
+          ],
+          "context_chars": 1512,
+          "hits": [
+            {
+              "id": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md:5",
+              "dense_rank": null,
+              "bm25_rank": 1,
+              "rrf_score": 0.01639344
+            },
+            {
+              "id": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md:0",
+              "dense_rank": null,
+              "bm25_rank": 2,
+              "rrf_score": 0.01612903
+            },
+            {
+              "id": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md:3",
+              "dense_rank": null,
+              "bm25_rank": 3,
+              "rrf_score": 0.01587302
+            },
+            {
+              "id": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md:4",
+              "dense_rank": null,
+              "bm25_rank": 4,
+              "rrf_score": 0.015625
+            },
+            {
+              "id": "이탈리아 베네치아에서 우연히 만난 초등학교 동창.md:2",
+              "dense_rank": null,
+              "bm25_rank": 5,
+              "rrf_score": 0.01538462
+            }
+          ]
+        },
+        {
+          "file": "제주 게스트하우스의 마지막 저녁.md",
+          "question": "해린의 직업 계획과 두 사람의 관계는 무엇인가요?",
+          "category": "relationship",
+          "evidence_ranks": [
+            1,
+            1
+          ],
+          "context_chars": 1541,
+          "hits": [
+            {
+              "id": "제주 게스트하우스의 마지막 저녁.md:0",
+              "dense_rank": null,
+              "bm25_rank": 1,
+              "rrf_score": 0.01639344
+            },
+            {
+              "id": "제주 게스트하우스의 마지막 저녁.md:4",
+              "dense_rank": null,
+              "bm25_rank": 2,
+              "rrf_score": 0.01612903
+            },
+            {
+              "id": "제주 게스트하우스의 마지막 저녁.md:2",
+              "dense_rank": null,
+              "bm25_rank": 3,
+              "rrf_score": 0.01587302
+            },
+            {
+              "id": "제주 게스트하우스의 마지막 저녁.md:1",
+              "dense_rank": null,
+              "bm25_rank": 4,
+              "rrf_score": 0.015625
+            },
+            {
+              "id": "제주 게스트하우스의 마지막 저녁.md:3",
+              "dense_rank": null,
+              "bm25_rank": 5,
+              "rrf_score": 0.01538462
+            }
+          ]
+        },
+        {
+          "file": "제주 게스트하우스의 마지막 저녁.md",
+          "question": "밤에 바다 수영을 함께 해도 되나요?",
+          "category": "exact_constraint",
+          "evidence_ranks": [
+            3
+          ],
+          "context_chars": 1298,
+          "hits": [
+            {
+              "id": "제주 게스트하우스의 마지막 저녁.md:2",
+              "dense_rank": null,
+              "bm25_rank": 1,
+              "rrf_score": 0.01639344
+            },
+            {
+              "id": "제주 게스트하우스의 마지막 저녁.md:4",
+              "dense_rank": null,
+              "bm25_rank": 2,
+              "rrf_score": 0.01612903
+            },
+            {
+              "id": "제주 게스트하우스의 마지막 저녁.md:0",
+              "dense_rank": null,
+              "bm25_rank": 3,
+              "rrf_score": 0.01587302
+            }
+          ]
+        },
+        {
+          "file": "교토에서 바뀐 필름 카메라.md",
+          "question": "두 사람의 카메라는 어떻게 구분하나요?",
+          "category": "exact_attribute",
+          "evidence_ranks": [
+            1,
+            1
+          ],
+          "context_chars": 1445,
+          "hits": [
+            {
+              "id": "교토에서 바뀐 필름 카메라.md:0",
+              "dense_rank": null,
+              "bm25_rank": 1,
+              "rrf_score": 0.01639344
+            },
+            {
+              "id": "교토에서 바뀐 필름 카메라.md:2",
+              "dense_rank": null,
+              "bm25_rank": 2,
+              "rrf_score": 0.01612903
+            },
+            {
+              "id": "교토에서 바뀐 필름 카메라.md:1",
+              "dense_rank": null,
+              "bm25_rank": 3,
+              "rrf_score": 0.01587302
+            },
+            {
+              "id": "교토에서 바뀐 필름 카메라.md:3",
+              "dense_rank": null,
+              "bm25_rank": 4,
+              "rrf_score": 0.015625
+            }
+          ]
+        },
+        {
+          "file": "교토에서 바뀐 필름 카메라.md",
+          "question": "오늘 찍은 필름 사진을 바로 볼 수 있나요?",
+          "category": "exact_constraint",
+          "evidence_ranks": [
+            1
+          ],
+          "context_chars": 1445,
+          "hits": [
+            {
+              "id": "교토에서 바뀐 필름 카메라.md:0",
+              "dense_rank": null,
+              "bm25_rank": 1,
+              "rrf_score": 0.01639344
+            },
+            {
+              "id": "교토에서 바뀐 필름 카메라.md:3",
+              "dense_rank": null,
+              "bm25_rank": 2,
+              "rrf_score": 0.01612903
+            },
+            {
+              "id": "교토에서 바뀐 필름 카메라.md:2",
+              "dense_rank": null,
+              "bm25_rank": 3,
+              "rrf_score": 0.01587302
+            },
+            {
+              "id": "교토에서 바뀐 필름 카메라.md:1",
+              "dense_rank": null,
+              "bm25_rank": 4,
+              "rrf_score": 0.015625
+            }
+          ]
+        },
+        {
+          "file": "심야 라디오의 마지막 게스트.md",
+          "question": "방송은 왜 종료되며 진행자는 누구인가요?",
+          "category": "exact_attribute",
+          "evidence_ranks": [
+            1,
+            2
+          ],
+          "context_chars": 1449,
+          "hits": [
+            {
+              "id": "심야 라디오의 마지막 게스트.md:1",
+              "dense_rank": null,
+              "bm25_rank": 1,
+              "rrf_score": 0.01639344
+            },
+            {
+              "id": "심야 라디오의 마지막 게스트.md:0",
+              "dense_rank": null,
+              "bm25_rank": 2,
+              "rrf_score": 0.01612903
+            },
+            {
+              "id": "심야 라디오의 마지막 게스트.md:2",
+              "dense_rank": null,
+              "bm25_rank": 3,
+              "rrf_score": 0.01587302
+            },
+            {
+              "id": "심야 라디오의 마지막 게스트.md:3",
+              "dense_rank": null,
+              "bm25_rank": 4,
+              "rrf_score": 0.015625
+            }
+          ]
+        },
+        {
+          "file": "심야 라디오의 마지막 게스트.md",
+          "question": "다은은 사용자의 개인사를 모두 알고 있나요?",
+          "category": "contradiction",
+          "evidence_ranks": [
+            1
+          ],
+          "context_chars": 1449,
+          "hits": [
+            {
+              "id": "심야 라디오의 마지막 게스트.md:0",
+              "dense_rank": null,
+              "bm25_rank": 1,
+              "rrf_score": 0.01639344
+            },
+            {
+              "id": "심야 라디오의 마지막 게스트.md:2",
+              "dense_rank": null,
+              "bm25_rank": 2,
+              "rrf_score": 0.01612903
+            },
+            {
+              "id": "심야 라디오의 마지막 게스트.md:1",
+              "dense_rank": null,
+              "bm25_rank": 3,
+              "rrf_score": 0.01587302
+            },
+            {
+              "id": "심야 라디오의 마지막 게스트.md:3",
+              "dense_rank": null,
+              "bm25_rank": 4,
+              "rrf_score": 0.015625
+            }
+          ]
+        },
+        {
+          "file": "비 오는 북카페의 마지막 페이지.md",
+          "question": "소은은 카페 주인이고 카페는 오늘 폐업하나요?",
+          "category": "contradiction",
+          "evidence_ranks": [
+            1,
+            1
+          ],
+          "context_chars": 1474,
+          "hits": [
+            {
+              "id": "비 오는 북카페의 마지막 페이지.md:0",
+              "dense_rank": null,
+              "bm25_rank": 1,
+              "rrf_score": 0.01639344
+            },
+            {
+              "id": "비 오는 북카페의 마지막 페이지.md:1",
+              "dense_rank": null,
+              "bm25_rank": 2,
+              "rrf_score": 0.01612903
+            },
+            {
+              "id": "비 오는 북카페의 마지막 페이지.md:4",
+              "dense_rank": null,
+              "bm25_rank": 3,
+              "rrf_score": 0.01587302
+            },
+            {
+              "id": "비 오는 북카페의 마지막 페이지.md:2",
+              "dense_rank": null,
+              "bm25_rank": 4,
+              "rrf_score": 0.015625
+            },
+            {
+              "id": "비 오는 북카페의 마지막 페이지.md:3",
+              "dense_rank": null,
+              "bm25_rank": 5,
+              "rrf_score": 0.01538462
+            }
+          ]
+        },
+        {
+          "file": "비 오는 북카페의 마지막 페이지.md",
+          "question": "함께 쓰는 다음 페이지 결말의 조건은 무엇인가요?",
+          "category": "ending",
+          "evidence_ranks": [
+            1
+          ],
+          "context_chars": 1323,
+          "hits": [
+            {
+              "id": "비 오는 북카페의 마지막 페이지.md:4",
+              "dense_rank": null,
+              "bm25_rank": 1,
+              "rrf_score": 0.01639344
+            },
+            {
+              "id": "비 오는 북카페의 마지막 페이지.md:2",
+              "dense_rank": null,
+              "bm25_rank": 2,
+              "rrf_score": 0.01612903
+            },
+            {
+              "id": "비 오는 북카페의 마지막 페이지.md:0",
+              "dense_rank": null,
+              "bm25_rank": 3,
+              "rrf_score": 0.01587302
+            },
+            {
+              "id": "비 오는 북카페의 마지막 페이지.md:3",
+              "dense_rank": null,
+              "bm25_rank": 4,
+              "rrf_score": 0.015625
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

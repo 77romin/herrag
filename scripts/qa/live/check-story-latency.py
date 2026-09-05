@@ -1,13 +1,15 @@
 """Small live smoke comparison, not a statistically representative benchmark."""
-import sys
-sys.path.insert(0, r'C:/SSAFY/chatbot-project_lab/servers/.venv/Lib/site-packages')
-sys.path.insert(0, r'C:/SSAFY/chatbot-project_lab/servers')
 import json
 import logging
 import os
+import sys
 from pathlib import Path
 from time import perf_counter
 from uuid import uuid4
+
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT / "servers"))
+
 from fastapi.testclient import TestClient
 import main
 
@@ -36,7 +38,7 @@ with TestClient(main.app) as client:
                    'status': reply.status_code, 'grounding': body.get('grounding'),
                    'scene_number': body.get('scene_number')}
             results.append(row)
-            Path('tmp/story-latency-results.json').write_text(
+            Path('docs/qa/archive/story-latency-results.json').write_text(
                 json.dumps(results, ensure_ascii=False, indent=2), encoding='utf-8')
             print(json.dumps(row, ensure_ascii=False), flush=True)
             client.post('/story/reset', json={'session_id': session})
@@ -45,5 +47,5 @@ with TestClient(main.app) as client:
             assert body['grounding'] == expected
             assert not body['ended'] and body['scene_number'] == 1
             assert body['answer'] == '\n'.join(part['text'] for part in body['segments'])
-Path('tmp/story-latency-results.json').write_text(
+Path('docs/qa/archive/story-latency-results.json').write_text(
     json.dumps(results, ensure_ascii=False, indent=2), encoding='utf-8')

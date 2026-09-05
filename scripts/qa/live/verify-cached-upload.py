@@ -1,9 +1,11 @@
-import sys
-sys.path.insert(0, r'C:/SSAFY/chatbot-project_lab/servers/.venv/Lib/site-packages')
-sys.path.insert(0, r'C:/SSAFY/chatbot-project_lab/servers')
 import json
+import sys
 from pathlib import Path
 from uuid import uuid4
+
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT / "servers"))
+
 from fastapi.testclient import TestClient
 import main
 root=Path('servers')

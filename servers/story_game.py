@@ -1,4 +1,5 @@
 """Session-scoped story state; model decisions never directly overwrite game state."""
+from __future__ import annotations
 import json
 import logging
 from dataclasses import dataclass, field, replace

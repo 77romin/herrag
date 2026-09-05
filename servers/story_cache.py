@@ -97,8 +97,9 @@ class PackCache:
             finally:
                 temporary.unlink(missing_ok=True)
             if not vector_record:
-                for chunk in chunks:
-                    chunk.metadata.update(pack_id=vector_key, source=filename)
+                for index, chunk in enumerate(chunks):
+                    chunk.metadata.update(pack_id=vector_key, source=filename,
+                                          chunk_index=index, chunk_id=ids[index])
                 self.store.add_documents(chunks, ids=ids)
             if set(self.store.get(ids=ids)["ids"]) != set(ids):
                 raise RuntimeError("스토리팩 벡터 저장을 완료하지 못했습니다.")

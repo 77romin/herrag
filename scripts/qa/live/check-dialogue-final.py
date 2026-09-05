@@ -1,9 +1,11 @@
-import sys
-sys.path.insert(0, r'C:/SSAFY/chatbot-project_lab/servers/.venv/Lib/site-packages')
-sys.path.insert(0, r'C:/SSAFY/chatbot-project_lab/servers')
 import asyncio, json, logging
+import sys
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT / "servers"))
+
 import main
 from story_game import StoryGames
 from story_progress import fallback_question
@@ -32,23 +34,17 @@ async def run():
             else:
                 messages = ['왜 저한테 말을 거셨어요?', '좋아요. 같이 정리할게요.', '요즘 공부가 힘들어서 쉬러 왔어요. 해린 씨는요?']
             rows=[]
-            drafts=[]
-            def generate(game, message, contexts):
-                turn=main.app.state.story_generate(game,message,contexts)
-                drafts.append({'turn':turn.model_dump(),'feedback':game.repair_feedback})
-                Path('tmp/kyoto-drafts.json').write_text(json.dumps(drafts,ensure_ascii=False,indent=2),encoding='utf-8')
-                return turn
             for text in messages:
                 try:
-                    result = games.play('test', initial['revision'], text, main.app.state.story_retrieve, generate)
+                    result = games.play('test', initial['revision'], text, main.app.state.story_retrieve, main.app.state.story_generate)
                     rows.append({'input': text, 'answer': result['answer'], 'scene': result['scene_number'], 'ended': result['ended']})
                 except Exception as exc:
                     rows.append({'input': text, 'error': str(exc)})
                 print(json.dumps({'pack': name, **rows[-1]}, ensure_ascii=False), flush=True)
             return {'pack': name, 'rows': rows}
         with ThreadPoolExecutor(max_workers=2) as pool:
-            result=list(pool.map(check, ['교토에서 바뀐 필름 카메라.md']))
-        Path('tmp/kyoto-final-results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
+            result=list(pool.map(check, ['교토에서 바뀐 필름 카메라.md','제주 게스트하우스의 마지막 저녁.md']))
+        Path('docs/qa/archive/dialogue-final-results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
         assert not any('error' in row for r in result for row in r['rows'])
         assert result[0]['rows'][0]['scene']==3
 

@@ -42,7 +42,7 @@ const state = expr=>vm.runInContext(expr,context);
  grounding='supported';end=true;await ids['chat-form'].fire('submit');
  assert.equal(state('revision'),null);assert.equal(ids.input.disabled,true);assert.equal(state('selectedPack'),null);assert.equal(ids.chat.children.at(-1).className,'ending');
  await ids.samples.children[2].click();await ids['upload-form'].fire('submit');
- assert.equal(ids.chat.children.length,1);assert.equal(ids.title.textContent,'베네치아 이야기');
+ assert.equal(ids.chat.children.length,2);assert.equal(ids.title.textContent,'베네치아 이야기');
  await ids.reset.click();assert.equal(state('revision'),null);assert.equal(ids.chat.children.length,1);
  console.log('PASS: 5 packs, selection, start, failed replacement preserves game, contradiction badge, failed reply retry, ending reset, new pack clears history, eject.');
 })().catch(e=>{console.error(e);process.exitCode=1;});

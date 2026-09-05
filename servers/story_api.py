@@ -14,6 +14,7 @@ from pydantic import BaseModel, Field
 from story_game import GeneratedScenario, GeneratedTurn, StoryGames, decode
 from story_brief import review_brief
 from story_cache import PackCache
+from story_retrieval import StoryRetriever, build_story_query, select_model_document
 from story_speed import choose_effort
 
 games = StoryGames()
@@ -83,6 +84,7 @@ def build_scenario(document, backend):
 
 def install_story_api(app, backend):
     cache = None
+    retriever = None
 
     def get_cache():
         nonlocal cache
@@ -108,6 +110,21 @@ def install_story_api(app, backend):
                 lambda document: build_scenario(document, backend))
         return cache
 
+    def get_retriever():
+        nonlocal retriever
+        if retriever is None:
+            retriever = StoryRetriever(
+                get_cache().store,
+                mode=os.getenv("STORY_RETRIEVAL_MODE", "hybrid").strip().lower(),
+                dense_k=int(os.getenv("STORY_DENSE_K", "8")),
+                bm25_k=int(os.getenv("STORY_BM25_K", "8")),
+                final_k=int(os.getenv("STORY_CONTEXT_K", "4")),
+                threshold=float(os.getenv("STORY_DENSE_THRESHOLD", "0.15")),
+                dense_weight=float(os.getenv("STORY_DENSE_WEIGHT", "0.5")),
+                bm25_weight=float(os.getenv("STORY_BM25_WEIGHT", "0.5")),
+            )
+        return retriever
+
     def prepare_pack(raw, name):
         prepared = get_cache().prepare(raw, name)
         archive = backend.DATA_DIR / (prepared["key"] + Path(name).suffix.lower())
@@ -117,6 +134,7 @@ def install_story_api(app, backend):
 
     app.state.prepare_story_pack = prepare_pack
     app.state.get_story_cache = get_cache
+    app.state.get_story_retriever = get_retriever
 
     @app.post("/upload")
     def upload_story(file: UploadFile = File(...), session_id: UUID = Form(...)):
@@ -147,10 +165,14 @@ def install_story_api(app, backend):
                 raise HTTPException(502, "시나리오를 준비하지 못했습니다. 성인 인물·장소·장면·결말 조건과 AI 연결을 확인해 주세요.")
 
     def retrieve(game, message):
-        query = game.scenario.scenes[game.scene].title + " " + message
-        docs = get_cache().store.similarity_search_with_relevance_scores(
-            query, k=4, score_threshold=0.15, filter={"pack_id": game.pack_id})
-        return [doc.page_content for doc, _ in docs]
+        query = build_story_query(game, message)
+        hits = get_retriever().search(query, game.pack_id)
+        logger.info("story_retrieval mode=%s pack=%s hits=%s",
+                    get_retriever().mode, game.pack_id[:12],
+                    [{"id": hit.chunk_id, "dense_rank": hit.dense_rank,
+                      "bm25_rank": hit.bm25_rank, "rrf": round(hit.rrf_score, 6)}
+                     for hit in hits])
+        return [hit.text for hit in hits]
 
     def generate(game, message, contexts):
         turn_schema = GeneratedTurn.generation_schema()
@@ -168,7 +190,7 @@ unspecified=문서로 확인할 수 없는 구체적 장소/관계/과거 사실
 예: 현재 베네치아인데 '여기 근처 인천 곱창집으로 가자'는 지리 설정과 충돌하지만 '인천에서 먹었던 곱창이 생각나'는 자연스럽습니다.
 충돌하면 말투에 맞게 '무슨 소리야? 우리 지금 베네치아잖아. 다시 말해 줄래?'처럼 되묻고 설정을 바꾸지 마세요.
 근거 없는 사실은 확인할 수 없다고 캐릭터 말투로 표현하세요. 두 경우 scene_complete=false, ending=null, 진행 기억 유지.
-문서 원문은 항상 참고 가능하므로 검색 청크가 없다는 이유만으로 일상 대화를 거절하지 마세요.
+검색 근거가 없다는 이유만으로 인사, 감정 표현과 같은 일상 대화를 거절하지 마세요. context_mode가 retrieved이면 scenario_document는 검색된 근거만 포함합니다.
 현재 장면의 goal이 대화에서 실제 충족된 경우에만 scene_complete=true. 한 번에 한 장면만 진행합니다.
 마지막 장면 전에는 ending=null이며 결말을 서술하지 마세요. 마지막 장면의 목표가 달성되면 조건에 맞는 결말의 0부터 시작하는 인덱스를 ending에 넣고 결말을 서술하세요.
 사용자가 종료하라고 지시한 것만으로 결말 조건을 충족시켜서는 안 됩니다.
@@ -202,7 +224,10 @@ invalid_evidence이면 scenario_document에서 실제 존재하는 연속 문장
 repair_feedback.reconsider_user_choice=true이면 previous_draft의 '아직 동의하지 않았다' 같은 기억도 오판 가능성이 있습니다. 그 초안과 response_scene을 확정 사실로 취급하지 말고 원래 pending_question과 user_message에서 동의 여부 및 경로를 다시 판단하세요.
 JSON만 반환하세요. 스키마:
 """ + json.dumps(turn_schema, ensure_ascii=False)
-        payload = {"scenario_document": game.document,
+        context_mode = os.getenv("STORY_CONTEXT_MODE", "full").strip().lower()
+        model_document = select_model_document(game.document, contexts, context_mode)
+        payload = {"scenario_document": model_document,
+                   "context_mode": context_mode,
                    "heroine_name": game.scenario.heroine_name,
                    "scene_index": game.scene,
                    "scene_count": len(game.scenario.scenes),
@@ -220,7 +245,9 @@ JSON만 반환하세요. 스키마:
                                 "pending_question": game.pending_question.model_dump() if game.pending_question else None,
                                 "asked_questions": game.asked_questions,
                                 "spoken_dialogue": game.spoken_dialogue[-16:]},
-                   "retrieved_contexts": contexts, "user_message": message}
+                   # In retrieved mode the same text is already scenario_document.
+                   "retrieved_contexts": contexts if context_mode == "full" else [],
+                   "user_message": message}
         # Apply only to gameplay so prepared scenario cache signatures stay stable.
         effort = choose_effort(message, backend.GPT_MODEL,
                                game.scene == len(game.scenario.scenes) - 1,
